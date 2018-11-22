@@ -5,7 +5,9 @@ Telegram Tipping Bot for Bitcoin based cryptocurrencies
 
 ##### Nodejs
 ##### Mysql (InnoDB support)
+##### sendmail (for error reporting)
 ##### forever
+##### curl
 
 ## Installation:
 ```
@@ -74,4 +76,21 @@ If you don't see getbestblockhash, then just use this value
 getinfo
 ```
 
-                                                  
+### Wallet conf file settings:
+
+Your wallet needs to be configured to send transaction information to your tipbot for new deposits
+
+Here is an example yourcoin.conf file:
+```
+server=1
+daemon=1
+keypool=50
+rpcuser=<Your rpc username>
+rpcpassword=<Your rpc password>
+rpcport=9999
+rpcallowip=127.0.0.1
+rpcallowip=<another external ip if needed>
+port=29999
+walletnotify=/usr/bin/curl --request GET 'http://127.0.0.1:699/dep/gettransactioninfo/1/%s'
+```
+In the example above you will see ***gettransactioninfo/1/%s*** ... The '1' in that url is the wallet ID# in the database.
