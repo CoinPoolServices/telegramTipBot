@@ -3,9 +3,9 @@ Telegram Tipping Bot for Bitcoin based cryptocurrencies
 
 ## Requirements:
 
-Nodejs
-Mysql (InnoDB support)
-forever
+### Nodejs
+### Mysql (InnoDB support)
+### forever
 
 ## Installation:
 ```
@@ -30,7 +30,7 @@ The wallets do not need to run on the same host as the Bot.
 
 Important information for adding your wallets to the database:
 
-Fields to fill out:
+### Fields to fill out:
 ```
   coinname :: The name of the coin
   coincode :: The ticker code of the coin
