@@ -3,9 +3,9 @@ Telegram Tipping Bot for Bitcoin based cryptocurrencies
 
 ## Requirements:
 
-### Nodejs
-### Mysql (InnoDB support)
-### forever
+##### Nodejs
+##### Mysql (InnoDB support)
+##### forever
 
 ## Installation:
 ```
@@ -49,4 +49,21 @@ Important information for adding your wallets to the database:
   username :: The RPC username of the wallet
   password :: The RPC password of the wallet
 ```
+
+### Hasmethods instructions:
+
+After you have installed your wallet client, check to see what methods it supports:
+```
+walletcoin-cli help
+```
+**getwalletinfo,getnetworkinfo,getblockchaininfo,getbestblockhash**
+If you see all of these in the list of available commands, then use this value for hasmethods
+
+If NOT, then:
+**getinfo,getbestblockhash**
+If you see both of these methods in the list of commands, then use this value for hasmethods
+
+If you don't ssee getbestblockhash, then:
+**getinfo**
+Just use this value
                                                   
